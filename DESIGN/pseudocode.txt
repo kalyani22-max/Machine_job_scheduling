@@ -1,0 +1,49 @@
+Input file type: 
+Multiple files of type .txt or .dat.
+
+Source code:
+main.c 
+
+Input file line structure:
+Job id : Description : Machine number : Time : Client name
+
+Program Flow: 
+Input file -> main.c -> Output Files 
+
+//Pesudo code
+******INSIDE main.c******
+structure JOB :
+5 character poniter type fields/variables 
+ 
+Function1: Read file and store in datastructure 
+******START******
+1. Take multiple files as a input from user(command line)
+2. Valid commandline arguments
+3. Open the files in "read" mode
+4. Check 
+	1:File is available in the directory or not 
+	2:File is empty
+	3:
+5. Parcing the files line by line and check the lines are valid or not.
+6. Seperate the fields and store it into the JOB structure array.
+7. Create seperate threads fro each JOB structure
+8. Pass that structure to the Assign_machine function. 
+9. Wait for all child threads to join
+10. Repeate steps 4 to 7 for number of files time.
+******END******
+
+Function2:Assign_machine (core function)
+******START******
+1. Type cast all the fields in the structure into equivalent datatypes
+2. Check the machine number from the structure
+3. Check the machine with same machine number is available or busy in the processing another thread
+4. If machine is free assign the thread to that machine and increase the time count by the value of time in structure. 
+5. If machine is busy continue next file
+******END******
+
+******END main.c******
+
+
+
+
+
